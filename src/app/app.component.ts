@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jegybazar';
-  isCollapsed = true;
+  
+  // átmozgatva a navbar component-be, miután komponensekre szedtük az appot 
+  // isCollapsed = true;
 }
