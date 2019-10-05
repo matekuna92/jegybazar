@@ -144,4 +144,5 @@
     "@schematics/angular:service": {
       "spec": false
     }
+  }
 }

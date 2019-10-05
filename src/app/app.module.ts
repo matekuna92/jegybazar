@@ -11,6 +11,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { EventcardComponent } from './eventcard/eventcard.component';
 import { FooterComponent } from './footer/footer.component';
+import { EventComponent } from './event/event.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     JumbotronComponent,
     EventcardComponent,
-    FooterComponent
+    FooterComponent,
+    EventComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
