@@ -1,6 +1,13 @@
 <!-- a komponensek generálása után az app component-ben már csak azok a komponensek maradnak, 
 amik minden oldalon megtalálhatók fixen, a többi html-t pedig kiszervezzük 1-1 komponensbe -->
 
+<!-- a home komponens létrehozása után az abban lévő tartalom még nem jelenik meg, mert nem hoztunk
+létre route-ot az app komponens számára! -> new .ts file: app-routing.ts -->
+
 <app-navbar></app-navbar>
-<app-jumbotron></app-jumbotron>        
+<app-jumbotron></app-jumbotron>    
+
+<!-- a "cserélhető" rész a HTML-ben, minden route esetén egy másik komponens lesz használva -->
+<router-outlet></router-outlet>
+
 <app-footer></app-footer>

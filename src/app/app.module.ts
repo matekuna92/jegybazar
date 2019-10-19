@@ -46,13 +46,20 @@ import { TicketComponent } from './ticket/ticket.component';
     BidComponent,
     TicketDetailComponent,
     TicketListComponent,
-    TicketComponent
+    TicketComponent,
+    /* itt kötöm össze az app-routing.modul-t az app komponenssel:
+    a declarations-ben minden komponenst felkell sorolni, viszont a komponenseket a routing-nál is
+     fel kell sorolni, így a dupla felsorolás helyett létrehozunk egy routableComponent tömböt az
+     app-routing-ban, és elegendő ezt megadni a declarations-ben */
+     ...AppRoutingModule.routableComponents
   ],
   imports: [
     BrowserModule,
+    // az app-routing-module-t úgy tudom összekötni az app-module-al, hogy importálni kell az app.module-ban
+    // az AppRoutingModule-t
     AppRoutingModule,
     CollapseModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
