@@ -19,9 +19,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const appRoutes: Routes = [
     // path + component, az adott URL-en elérni kívánt komponens megadása 
     {path: 'home', component: HomeComponent},
-    {path: 'event', component: EventComponent},
-    {path: 'event/list', component: EventListComponent},
-    {path: 'event/:id/edit', component: EventDetailComponent},
+    // egy route-nak lehetnek child elemei, melyek tömbben adhatók meg
+    {path: 'event',
+    component: EventComponent,
+    // ha children-t hozunk létre, nem szükséges a /event előtag(event/list), automatikusan elékerül
+    children: [
+        {path: 'list', component: EventListComponent},
+        {path: ':id/edit', component: EventDetailComponent}
+    ]},
     {path: 'ticket', component: TicketComponent},
     {path: 'about', component: AboutComponent},
     {path: 'login', component: LoginComponent},
