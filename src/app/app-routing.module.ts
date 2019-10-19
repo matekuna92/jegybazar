@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
+import { EventListComponent } from './event-list/event-list.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
@@ -18,6 +20,8 @@ const appRoutes: Routes = [
     // path + component, az adott URL-en elérni kívánt komponens megadása 
     {path: 'home', component: HomeComponent},
     {path: 'event', component: EventComponent},
+    {path: 'event/list', component: EventListComponent},
+    {path: 'event/:id/edit', component: EventDetailComponent},
     {path: 'ticket', component: TicketComponent},
     {path: 'about', component: AboutComponent},
     {path: 'login', component: LoginComponent},
@@ -39,10 +43,16 @@ const appRoutes: Routes = [
 
 export class AppRoutingModule
 {
+    // ahhoz, hogy az event.component html-ben használni tudjuk az event-list és detail komponenst,
+    // importálni kell a routing file-ban + megadni a route-ot ahol meg akarjuk jelenítani
+    // ha nincs megadva és enélkül használjuk a komponenseket, parse error-t kapunk (nálam működött újabb verzióban
+    // úgy is, ha nem adtam meg ebben a fájlban... (??) )
     static routableComponents = [
         HomeComponent,
         PageNotFoundComponent,
         EventComponent,
+        EventListComponent,
+        EventDetailComponent,
         TicketComponent,
         AboutComponent,
         LoginComponent,
