@@ -6,6 +6,8 @@ import { EventComponent } from './event/event.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -30,7 +32,13 @@ const appRoutes: Routes = [
         {path: ':id/edit', component: EventDetailComponent},
         {path: 'new', component: EventDetailComponent}  // new és editre is a detail komponenst használjuk
     ]},
-    {path: 'ticket', component: TicketComponent},
+    {path: 'ticket',
+    component: TicketComponent,
+    children: [
+        {path: 'list', component: TicketListComponent},
+        {path: 'new', component: TicketDetailComponent},
+        {path: ':id/bid', component: TicketDetailComponent},
+    ]},
     {path: 'about', component: AboutComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
@@ -66,6 +74,8 @@ export class AppRoutingModule
         EventListComponent,
         EventDetailComponent,
         TicketComponent,
+        TicketListComponent,
+        TicketDetailComponent,
         AboutComponent,
         LoginComponent,
         RegisterComponent,
