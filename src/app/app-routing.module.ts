@@ -25,7 +25,8 @@ const appRoutes: Routes = [
     // ha children-t hozunk létre, nem szükséges a /event előtag(event/list), automatikusan elékerül
     children: [
         {path: 'list', component: EventListComponent},
-        {path: ':id/edit', component: EventDetailComponent}
+        {path: ':id/edit', component: EventDetailComponent},
+        {path: 'new', component: EventDetailComponent}  // new és editre is a detail komponenst használjuk
     ]},
     {path: 'ticket', component: TicketComponent},
     {path: 'about', component: AboutComponent},
