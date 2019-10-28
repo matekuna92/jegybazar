@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {ProfileComponent} from './profile/profile.component';
+import {ProfileEditComponent} from './profile-edit/profile-edit.component';
 
 // beépített Routes angular típust használjuk, megadjuk a route-okat az alkalmazás számára
 // a route-ok sorrendje számít: ha a PageNotFoundComponent-et rakom elsőnek, akkor bármilyen
@@ -32,6 +34,11 @@ const appRoutes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
+    {path: 'user',
+    children: [
+        {path: '', component: ProfileComponent},
+        {path: 'edit', component: ProfileEditComponent},
+    ]},
     // ha nincs semmi megadva, akkor a home route legyen az alapértelmezett
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     // *: minden egyéb url-re a page not found komponens jelenjen meg
@@ -55,13 +62,15 @@ export class AppRoutingModule
     // úgy is, ha nem adtam meg ebben a fájlban... (??) )
     static routableComponents = [
         HomeComponent,
-        PageNotFoundComponent,
         EventComponent,
         EventListComponent,
         EventDetailComponent,
         TicketComponent,
         AboutComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        ProfileComponent,
+        ProfileEditComponent,
+        PageNotFoundComponent
     ];
 }
