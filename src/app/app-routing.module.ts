@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
-import { EventListComponent } from './event-list/event-list.component';
-import { EventDetailComponent } from './event-detail/event-detail.component';
+import { EventListComponent } from './event/event-list/event-list.component';
+import { EventDetailComponent } from './event/event-detail/event-detail.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
@@ -40,12 +40,12 @@ const appRoutes: Routes = [
         {path: ':id/bid', component: TicketDetailComponent},
     ]},
     {path: 'about', component: AboutComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
     {path: 'user',
     children: [
         {path: '', component: ProfileComponent},
         {path: 'edit', component: ProfileEditComponent},
+        {path: 'login', component: LoginComponent},
+        {path: 'register', component: RegisterComponent},
     ]},
     // ha nincs semmi megadva, akkor a home route legyen az alapértelmezett
     {path: '', redirectTo: '/home', pathMatch: 'full'},
