@@ -6,14 +6,14 @@ import { EventComponent } from './event/event.component';
 import { EventListComponent } from './event/event-list/event-list.component';
 import { EventDetailComponent } from './event/event-detail/event-detail.component';
 import { TicketComponent } from './ticket/ticket.component';
-import { TicketListComponent } from './ticket-list/ticket-list.component';
-import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
+import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
+import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.component';
 import { AboutComponent } from './about/about.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {ProfileComponent} from './profile/profile.component';
-import {ProfileEditComponent} from './profile-edit/profile-edit.component';
+import { LoginComponent } from './user/login/login.component';
+import { RegisterComponent } from './user/register/register.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import {ProfileComponent} from './user/profile/profile.component';
+import {ProfileEditComponent} from './user/profile-edit/profile-edit.component';
 
 // beépített Routes angular típust használjuk, megadjuk a route-okat az alkalmazás számára
 // a route-ok sorrendje számít: ha a PageNotFoundComponent-et rakom elsőnek, akkor bármilyen
