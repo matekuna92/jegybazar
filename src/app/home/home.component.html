@@ -1,6 +1,19 @@
 
-    <!-- cards --> 
+<app-jumbotron>
 
+        <!-- az eredeti <app-jumbotron></app-jumbotron> helyett ide kerül a html, a jumbotron
+        komponensben pedig csak <ng-content> módon hívjuk meg az aktuálisan megjelenítendő tartalmat -->
+        <h1 class="display-4 mb-4">Jegyek bárkitől, bárhol, bármikor!</h1>
+        <p class="lead">Használd a Jegybazárt és csereberélj jegyeket a legjobb bulikra. Elfogyott? Az orrod elől vitték el az utolsót? Ne aggódj, irány a JegyBazár!</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg mt-4 mb-0" 
+            routerLink="/event/list"
+            href="#" role="button">Nézzük az eseményeket!</a>
+        </p>
+
+</app-jumbotron>
+
+    <!-- cards --> 
     <div class="container my-5">
             
         <div class="card-deck pt-5">

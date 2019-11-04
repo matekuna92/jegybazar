@@ -1,6 +1,10 @@
     <!-- jumbotron --> 
 
-        <div class="jumbotron py-5">
+ <!-- az egyes oldalakon más-más tartalom legyen a jumbotronban:
+                    a komponensekbe kerül a lenti HTML rész, itt pedig csak <ng-content> módon hívjuk meg
+            így minden komponens esetén az adott komponensben szereplő jumbotron html rész
+            fog megjelenni
+
             <div class="container text-center">
                 <h1 class="display-4 mb-4">Jegyek bárkitől, bárhol, bármikor!</h1>
                     <p class="lead">Használd a Jegybazárt és csereberélj jegyeket a legjobb bulikra. Elfogyott? Az orrod elől vitték el az utolsót? Ne aggódj, irány a JegyBazár!</p>
@@ -8,4 +12,25 @@
                         <a class="btn btn-primary btn-lg mt-4 mb-0" href="#" role="button">Nézzük az eseményeket!</a>
                     </p>
             </div>
+            -->
+
+
+        <div class="jumbotron py-5">
+                
+            <div class="container text-center">
+
+                <ng-content></ng-content>
+                
+                <!-- módosítható css selectorokkal az elemek sorrendje is,
+                ekkor a h1 cím a kisbetűs rész után fog megjelenni 
+                <ng-content select="p.lead"></ng-content>
+                <ng-content select="h1"></ng-content>
+                -->
+
+            </div>
+
+
         </div>
+           
+
+        

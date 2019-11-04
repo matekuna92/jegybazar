@@ -3,11 +3,15 @@ amik minden oldalon megtalálhatók fixen, a többi html-t pedig kiszervezzük 1
 
 <!-- a home komponens létrehozása után az abban lévő tartalom még nem jelenik meg, mert nem hoztunk
 létre route-ot az app komponens számára! -> new .ts file: app-routing.ts -->
+<div class="content-container">
 
-<app-navbar></app-navbar>
-<app-jumbotron></app-jumbotron>    
+    <app-navbar></app-navbar>
+   <!-- <app-jumbotron></app-jumbotron> -->   
 
-<!-- a "cserélhető" rész a HTML-ben, minden route esetén egy másik komponens lesz használva -->
-<router-outlet></router-outlet>
+    <!-- a "cserélhető" rész a HTML-ben, minden route esetén egy másik komponens lesz használva -->
+    <router-outlet></router-outlet>
 
-<app-footer></app-footer>
+</div>
+
+    <app-footer></app-footer>
+
