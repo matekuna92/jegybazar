@@ -25,6 +25,7 @@ import { BidComponent } from './ticket/bid/bid.component';
 import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { EventService } from './shared/event.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,11 @@ import { TicketComponent } from './ticket/ticket.component';
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  // providers-ben adhatom meg az elkészült service nevét használathoz
+  // https://angular.io/guide/dependency-injection-providers
+  // event-list component ts-ben EventService néven adom át paraméterként, ezzel tudom megadni, hogy melyik class
+  // melyik service-t használja
+  providers: [{ provide: EventService, useClass: EventService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

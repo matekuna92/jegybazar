@@ -8,6 +8,7 @@ import { EventDetailComponent } from './event/event-detail/event-detail.componen
 import { TicketComponent } from './ticket/ticket.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.component';
+import { BidComponent } from './ticket/bid/bid.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -34,10 +35,10 @@ const appRoutes: Routes = [
     ]},
     {path: 'ticket',
     component: TicketComponent,
-    children: [
+    children: [     /* ez a 3 children váltakozik a ticket component router-outlet részében */
         {path: 'list', component: TicketListComponent},
         {path: 'new', component: TicketDetailComponent},
-        {path: ':id/bid', component: TicketDetailComponent},
+        {path: ':id/bid', component: BidComponent},
     ]},
     {path: 'about', component: AboutComponent},
     {path: 'user',
@@ -76,6 +77,7 @@ export class AppRoutingModule
         TicketComponent,
         TicketListComponent,
         TicketDetailComponent,
+        BidComponent,
         AboutComponent,
         LoginComponent,
         RegisterComponent,
