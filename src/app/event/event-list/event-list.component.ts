@@ -17,7 +17,7 @@ export class EventListComponent implements OnInit {
   constructor(private _eventService: EventService) 
   {
       // visszaadja az egyenlőre teszt adattal feltöltött eseményeket
-      // 
+      // event.service.ts -ben van deklarálva a getAllEvents függvény
       this.events = this._eventService.getAllEvents();
       console.log(this);
    }
