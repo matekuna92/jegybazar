@@ -28,11 +28,17 @@
     -->
 
      <!-- [esemeny]-nek értéket kell adni, különben cant read id of undefined errort kapunk
-    eventcart component html-ben megadtuk, hogy esemeny.id legyen a paraméter, de itt még nem kapott értéket -->
-    <app-eventcard class="col col-md-6 col-lg-4"
-    *ngFor ="let ev of events"
-    [esemeny]="ev">
-    </app-eventcard>
+    eventcart component html-ben megadtuk, hogy esemeny.id legyen a paraméter, de itt még nem kapott értéket 
+
+    3 tömböt hozunk létre a külső ngFor-ral, ezekben mindegyikben 3 esemény lesz, ezt a belső ngFor hozza létre
+    külső ngFor a 3 div-et hozza létre, a 2. pedig az eventcard 3-3-3 elemeket -->
+
+    <div class="card-deck pt-5 pb-5" *ngFor="let evt of eventsGrouppedBy3">
+
+        <app-eventcard class="col col-md-6 col-lg-4" *ngFor ="let ev of evt" [esemeny]="ev">
+        </app-eventcard>
+
+    </div>
 
 
 <!-- régi kód
