@@ -10,7 +10,7 @@ export class UserService {
   isLoggedIn = false;
   private _user: UserModel;
 
-  constructor() {
+  constructor(private _router: Router) {
 
    }
 
@@ -25,7 +25,16 @@ export class UserService {
       this.isLoggedIn = true;
       this._router.navigate(['/user']);
     }
+    console.log('Bejelentkezve:', this.isLoggedIn); // elírt név/jelszó esetén false érték íródik ki
     // ha nem sikerült a navigálás
     return false;
+   }
+
+   logout()
+   {
+      delete(this._user); // user értéke ezzel undefined lesz // másik megoldás: this._user = new UserModel();
+      this.isLoggedIn = false;
+      this._router.navigate(['/home']);
+      console.log('Bejelentkezve:', this.isLoggedIn);
    }
 }
