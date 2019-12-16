@@ -28,13 +28,32 @@ export class UserService {
     console.log('Bejelentkezve:', this.isLoggedIn); // elírt név/jelszó esetén false érték íródik ki
     // ha nem sikerült a navigálás
     return false;
-   }
+  }
 
-   logout()
-   {
+  logout()
+  {
       delete(this._user); // user értéke ezzel undefined lesz // másik megoldás: this._user = new UserModel();
       this.isLoggedIn = false;
       this._router.navigate(['/home']);
+      console.log('Bejelentkezve:', this.isLoggedIn);
+  }
+
+   // opcionális paraméter -> a komponensből kap egy usermodel-t, egyébként nincs paraméter
+   register(param?: UserModel)
+   {
+      if(param)
+      {
+        // ha kapunk paramétert, akkor feltöltjük a user-t
+        this._user = new UserModel(param);
+      }
+      // egyébként teszt adat
+      else
+      {
+        this._user = new UserModel(UserModel.exampleUser);
+      }
+
+      this.isLoggedIn = true;
+      this._router.navigate(['/user']);
       console.log('Bejelentkezve:', this.isLoggedIn);
    }
 }
