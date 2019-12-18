@@ -2,13 +2,13 @@
             <div class="container">
                 <a class="navbar-brand" href="#">Jegybazár</a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarNavAltMarkup"
                 (click)="isCollapsed = !isCollapsed"
                 [attr.aria-expanded]="!isCollapsed">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup"
                 [collapse]="isCollapsed" [isAnimated]="true">
                     <div class="navbar-nav ml-auto">
@@ -16,12 +16,21 @@
                         <a class="nav-item nav-link" routerLinkActive="active" routerLink="/event/list">Események</a>
                         <a class="nav-item nav-link" routerLinkActive="active" routerLink="/ticket/list">Jegyek</a>
                         <a class="nav-item nav-link" routerLinkActive="active" routerLink="/about">Rólunk</a>
+
+                      <!-- Belépés+Regisztráció ne látszódjon, csak ha nincs bejelentkezve a user
+                      div-et használva szétesik a design, hiszen új elem került be, az ng-container
+                      beépített direktíva azonban semmilyen formában nem jelenik meg a DOM-ban ! -->
+                      <ng-container *ngIf="!userService.isLoggedIn">
+
                         <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/login">Belépés</a>
                         <a routerLinkActive="active" routerLink="/user/register" class="nav-item nav-link btn btn-primary text-light ml-lg-2 btn-sm">Regisztráció</a>
+
+                      </ng-container>
+
                         <!-- loginhoz szükséges egy Kijelentkezés gomb is -->
                         <a routerLinkActive="active" class="nav-item nav-link" (click)="logout()">Kijelentkezés</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <!-- navbar end --> 
+        <!-- navbar end -->
