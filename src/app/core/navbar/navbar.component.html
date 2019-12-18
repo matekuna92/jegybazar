@@ -19,17 +19,23 @@
 
                       <!-- Belépés+Regisztráció ne látszódjon, csak ha nincs bejelentkezve a user
                       div-et használva szétesik a design, hiszen új elem került be, az ng-container
-                      beépített direktíva azonban semmilyen formában nem jelenik meg a DOM-ban ! -->
-                      <ng-container *ngIf="!userService.isLoggedIn">
+                      beépített direktíva azonban semmilyen formában nem jelenik meg a DOM-ban !
+
+                      https://angular.io/api/common/NgIf#description -> elseblock doksi
+                      ha nincs belogolva, akkor az ngIf feltétel teljesül, ha igen, akkor az else Block -->
+                      <ng-container *ngIf="!userService.isLoggedIn; else loggedinBlock">
 
                         <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/login">Belépés</a>
                         <a routerLinkActive="active" routerLink="/user/register" class="nav-item nav-link btn btn-primary text-light ml-lg-2 btn-sm">Regisztráció</a>
 
                       </ng-container>
 
+                      <ng-template #loggedinBlock>
                         <!-- loginhoz szükséges egy Kijelentkezés gomb is -->
                         <a routerLinkActive="active" class="nav-item nav-link" (click)="logout()">Kijelentkezés</a>
-                    </div>
+                      </ng-template>
+
+                      </div>
                 </div>
             </div>
         </nav>
