@@ -7,12 +7,20 @@
 
             <!-- Alert message. -->
 
+            <!-- eredeti kiváltása ngx-bootstrap alert komponenssel
             <div class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 Hello, itt tudsz belépni.
             </div>
+            -->
+
+            <!-- Alert message.
+            <alert [type]="alert.type" [dismissible]="dismissible" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+itt most nincs szükség dinamikus type állításra, csak a danger-t használjuk rossz adat esetén -->
+<alert type="danger" [dismissible]="true" *ngIf="error" (onclose)="clearError()">
+  Hiba a bejelentkezés során! <p> {{error}} </p> </alert>
 
             <div class="card border-secondary mt-3 mb-4">
                 <div class="card-header">Bejelentkezés</div>
@@ -38,14 +46,14 @@
                                 Emlékezz rám
                             </label>
                         </div>
-                        
-                        <!-- régi button, még a user model és service előtt 
-                        Miután meg van a Model és a service logikája, ezután a login Component-ben meg kell 
-                        írni magát a login() függvényt. 
-A login component html-ben a  submit button-nél eddig ezt routerLink-kel átirányítottuk /user-re, 
-ehelyett mostmár a login component ts login() függvényét használjuk helyette, html-ben is át kell írni a 
-routerlinket 
-                        <button type="submit" 
+
+                        <!-- régi button, még a user model és service előtt
+                        Miután meg van a Model és a service logikája, ezután a login Component-ben meg kell
+                        írni magát a login() függvényt.
+A login component html-ben a  submit button-nél eddig ezt routerLink-kel átirányítottuk /user-re,
+ehelyett mostmár a login component ts login() függvényét használjuk helyette, html-ben is át kell írni a
+routerlinket
+                        <button type="submit"
                         routerLink="/user"
                         class="btn btn-primary">Belépés</button>
 -->
@@ -56,7 +64,7 @@ routerlinket
             </div>
 
         </div>
-        
+
     </div>
     <!-- Login formend -->
 

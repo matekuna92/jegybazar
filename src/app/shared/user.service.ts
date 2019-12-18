@@ -39,6 +39,8 @@ export class UserService {
   }
 
    // opcionális paraméter -> a komponensből kap egy usermodel-t, egyébként nincs paraméter
+   // itt nem kell Object.assign, mert itt a konstruktor segítségével hozzuk létre az objektumot,
+   // ezen keresztül másolunk új objektumba
    register(param?: UserModel)
    {
       if(param)

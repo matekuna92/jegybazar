@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // ngx-bootstrap collapse module a menü ikonhoz
-import { CollapseModule } from 'ngx-bootstrap';
+import { CollapseModule, AlertModule } from 'ngx-bootstrap';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { JumbotronComponent } from './core/jumbotron/jumbotron.component';
 import { EventcardComponent } from './event/eventcard/eventcard.component';
@@ -61,6 +61,7 @@ import { EventService } from './shared/event.service';
     AppRoutingModule,
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
+    AlertModule.forRoot()
   ],
   // providers-ben adhatom meg az elkészült service nevét használathoz
   // https://angular.io/guide/dependency-injection-providers

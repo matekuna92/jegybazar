@@ -15,7 +15,8 @@ export class UserModel {
         }
     }
 
-    // meghívhatjuk, mint UserModel.exampleUser, ami visszaadja egy test user objektumot az adataival
+    // statikus getter függvény -
+    //meghívhatjuk, mint UserModel.exampleUser, ami visszaadja egy test user objektumot az adataival
     static get exampleUser(): UserModel {
         return {
             id: 0,
