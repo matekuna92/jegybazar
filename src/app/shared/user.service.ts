@@ -96,6 +96,10 @@ export class UserService {
       return user.length > 0 ? user[0] : new UserModel(UserModel.emptyUser);
 
       // itt kezeljük le azt az esetet, ha nincs adat, ekkor az emptyUser objektumot használjuk a példányosításhoz
+   }
 
+   getCurrentUser()
+   {
+     return this._user;
    }
 }

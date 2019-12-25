@@ -26,6 +26,9 @@ import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.comp
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { EventService } from './shared/event.service';
+import { LoggedInGuard } from './shared/logged-in.guard';
+import { UserService } from './shared/user.service';
+import { TicketService } from './shared/ticket.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,7 @@ import { EventService } from './shared/event.service';
   // https://angular.io/guide/dependency-injection-providers
   // event-list component ts-ben EventService néven adom át paraméterként, ezzel tudom megadni, hogy melyik class
   // melyik service-t használja
-  providers: [{ provide: EventService, useClass: EventService }],
+  providers: [{ provide: EventService, useClass: EventService }, UserService, TicketService, LoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,6 +15,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import {ProfileComponent} from './user/profile/profile.component';
 import {ProfileEditComponent} from './user/profile-edit/profile-edit.component';
+import { LoggedInGuard } from './shared/logged-in.guard';
 
 // beépített Routes angular típust használjuk, megadjuk a route-okat az alkalmazás számára
 // a route-ok sorrendje számít: ha a PageNotFoundComponent-et rakom elsőnek, akkor bármilyen
@@ -22,7 +23,7 @@ import {ProfileEditComponent} from './user/profile-edit/profile-edit.component';
 // ha pl. 2 sorba írok home component-et, akkor mindig az első lesz érvényes, az fut le
 
 const appRoutes: Routes = [
-    // path + component, az adott URL-en elérni kívánt komponens megadása 
+    // path + component, az adott URL-en elérni kívánt komponens megadása
     {path: 'home', component: HomeComponent},
     // egy route-nak lehetnek child elemei, melyek tömbben adhatók meg
     {path: 'event',
@@ -43,8 +44,8 @@ const appRoutes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'user',
     children: [
-        {path: '', component: ProfileComponent},
-        {path: 'edit', component: ProfileEditComponent},
+        {path: '', component: ProfileComponent, canActivate: [LoggedInGuard]},
+        {path: 'edit', component: ProfileEditComponent, canActivate: [LoggedInGuard]},
         {path: 'login', component: LoginComponent},
         {path: 'register', component: RegisterComponent},
     ]},
