@@ -1,4 +1,4 @@
-/* Service-ek esetén az adatokat egy egységbe szeretnénk zárni, ehhez class-t használunk... 
+/* Service-ek esetén az adatokat egy egységbe szeretnénk zárni, ehhez class-t használunk...
 Service mellé létrehoztunk egy eventModel class-t, ami az EGY elemi adategységhez tartozó dolgokat magába foglalja
 eventService injectable + eventModel class */
 
@@ -20,6 +20,17 @@ export class EventModel {
         {
             Object.assign(this, param);  // célpont, forrás
         }
+    }
+
+    static get emptyEvent(): EventModel
+    {
+      return {
+        id: 0,
+        name: '',
+        date: '',
+        pictureURL: '',
+        description: ''
+      }
     }
 }
 

@@ -83,4 +83,16 @@ export class EventService {
   {
     return this._events;  // visszatérési érték az osztály _events változója !
   }
+
+  // a beadott id-ra visszatér az ehhez tartozó event-tel, ticket service-ben van használva a function
+   // ha nincs ilyen, akkor az emptyEvent-tel, amit az EventModel-ben hoztunk létre
+   // olyan tömbbel térünk vissza, ami vagy üres, vagy a megkapott id-jú event-et tartalmazza csak
+
+  getEventById(id)
+  {
+    const ev = this._events.filter(e => e.id === id);
+    // le kell kezelni azt az esetet, ha nem áll rendelkezésünkre adat
+    return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
+  }
+
 }

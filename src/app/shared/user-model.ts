@@ -27,4 +27,21 @@ export class UserModel {
             gender: 'Male'
         }
     }
+
+    // üres user, a user service getUserById számára, ahol lekezeljük azt az esetet, ha nincs adat
+    // ekkor az üres User legyen használva
+
+    /* statikus getter-nél nincs szükség példányra, hanem magán a class-on meghívható az emptyUser
+    user.service-ben: new UserModel(UserModel.emptyUser); --> magán a UserModel-en hívhatom meg! */
+    static get emptyUser(): UserModel
+    {
+      return {
+        id: 0,
+        name: '',
+        email: '',
+        address: '',
+        dateOfBirth: '',
+        gender: ''
+      }
+    }
 }
