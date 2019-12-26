@@ -3,7 +3,7 @@ Service mellé létrehoztunk egy eventModel class-t, ami az EGY elemi adategysé
 eventService injectable + eventModel class */
 
 export class EventModel {
-    id: number;
+    id?: number;
     name: string;
     date: string;   // date típussal érdemes élesben, most csak egyszerű módon tároljuk stringként
     pictureURL: string;
@@ -25,7 +25,9 @@ export class EventModel {
     static get emptyEvent(): EventModel
     {
       return {
-        id: 0,
+        // opcionálissá tettük a Modelben, a event-detail component-ben változik a <h3> szöveg az
+        // id-tól függően 
+       // id: 0,
         name: '',
         date: '',
         pictureURL: '',

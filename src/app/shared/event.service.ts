@@ -88,7 +88,7 @@ export class EventService {
    // ha nincs ilyen, akkor az emptyEvent-tel, amit az EventModel-ben hoztunk létre
    // olyan tömbbel térünk vissza, ami vagy üres, vagy a megkapott id-jú event-et tartalmazza csak
 
-  getEventById(id)
+  getEventById(id: number)
   {
     const ev = this._events.filter(e => e.id === id);
     // le kell kezelni azt az esetet, ha nem áll rendelkezésünkre adat
