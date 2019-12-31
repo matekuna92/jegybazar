@@ -29,6 +29,7 @@ import { EventService } from './shared/event.service';
 import { LoggedInGuard } from './shared/logged-in.guard';
 import { UserService } from './shared/user.service';
 import { TicketService } from './shared/ticket.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { TicketService } from './shared/ticket.service';
     AppRoutingModule,
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    FormsModule             // event-detail component <form #eventForm="ngForm"> -hoz kell
   ],
   // providers-ben adhatom meg az elkészült service nevét használathoz
   // https://angular.io/guide/dependency-injection-providers

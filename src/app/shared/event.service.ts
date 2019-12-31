@@ -95,4 +95,42 @@ export class EventService {
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
 
+  update(param: EventModel)
+  {
+    // nem módosítjuk az eredetit, leképezés map-pal
+    this._events = this._events.map( ev => {
+      if(ev.id === param.id)  // az aktuális ev event id-ja egyezik a paraméterben megadott event id-val
+      {
+        return {...param};  // átmásolom a param-okat
+      }
+      else    // nem azon az elemen állok, amit módosítani szeretnék, akkor visszatérek onmagával
+      {
+        return ev;
+      }
+
+      // rövid alakban:
+      // this._events = this._events.map( ev => {
+      //   ev.id === param.id ? {...param} : ev);
+    })
+  }
+
+  // create esetén nincs id, és nem is tudni, melyik lehet a max id, mert véletlen sorrendben is lehetnek
+  create(param: EventModel)
+  {
+    this._events = [
+      ...this._events,
+      {
+        // ez pont a bubble sort algoritmus, rövid alakban reduce-szal
+        // összehasonlítom sorban az elemeket, mindig az aktuális 2 közül a nagyobbat veszem,
+        // így a végén csak a legnagyobb id marad, +1 az új event számára
+        id: this._getMaxId() + 1,
+        ...param
+      }
+    ];
+  }
+
+  private _getMaxId()
+  {
+    return this._events.reduce( (x,y) => x.id > y.id ? x : y).id + 1;
+  }
 }
