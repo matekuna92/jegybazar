@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventModel } from '../../shared/event-model';
 import { EventService } from '../../shared/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-event-detail',
@@ -12,8 +13,10 @@ export class EventDetailComponent implements OnInit {
   // itt is osztályváltozóban tároljuk az aktuális event-et, mint a többi fájl esetén
   event: EventModel;
 
-  constructor(private _route: ActivatedRoute, private _eventService: EventService,
-    private _router: Router) { }
+  constructor(private _route: ActivatedRoute,
+              private _eventService: EventService,
+              private _location: Location,
+              private _router: Router) { }
 
   ngOnInit() {
     // snapshot.params.id módon is használható, de ekkor eltörhet a kód, ha nincs id -- params?.id -val javítható
@@ -59,7 +62,11 @@ export class EventDetailComponent implements OnInit {
 
     // visszatérés a lista oldalra létrehozás/szerkesztés után
     // a snapshot params-nál ActivatedRoute-ot használtunk, de a navigate az a Router paramétere !!!
-    this._router.navigate(['/event/list']);
+
+    // eredeti kód, ehelyett location service, mert pl. a ticket list event linkjei esetén is a fix
+    // event/list-re tért vissza a form elküldése után
+    /// this._router.navigate(['/event/list']);
+    this._location.back();
 
     console.log('form:', form);
     console.log('event:', this.event);

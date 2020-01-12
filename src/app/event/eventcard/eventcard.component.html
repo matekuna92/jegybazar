@@ -1,9 +1,9 @@
 <div class="card">
   <!-- régi: <img class="card-img-top" src="assets/sziget.png" alt="Card image cap"> -->
   <!-- attribútum direktíva-nak adunk értéket sima src helyett -->
-    <img class="card-img-top" [src]="esemeny.pictureURL" alt="Card image cap">
+    <img class="card-img-top" [src]="esemeny.pictureURL" height="160" alt="Card image cap">
     <div class="card-body">
-        <!-- miután már van EventModel tömbünk, és az eventcard component-ben megadtuk, hogy 
+        <!-- miután már van EventModel tömbünk, és az eventcard component-ben megadtuk, hogy
         @Input() esemeny: EventModel, tehát ilyen típusú input-ot várunk, így már használható a hivatkozás esemeny.id, esemeny.name, stb. módon -->
        <!-- régi, kézzel beírva: <h4 class="card-title">Sziget Fesztivál</h4> -->
         <h4 class="card-title"> {{ esemeny.name }} </h4>
@@ -13,14 +13,14 @@
         a routing-ban az event/list az alapértelmezett útvonal(navbar component-ben adtuk meg),
         a ../-rel visszalépünk az event route-ra és ehhez jön pluszba a /5/edit -->
 
-        <!-- EventModel után végre kiváltható a manuális 5-ös szám az esemeny.id-val. Így mindig az aktuális 
+        <!-- EventModel után végre kiváltható a manuális 5-ös szám az esemeny.id-val. Így mindig az aktuális
         kártya id-jára fog mutatni a link. -->
         <a [routerLink]="['../' , esemeny.id, 'edit']" class="row justify-content-end pr-4">Tovább</a>
     </div>
 </div>
 
-<!-- komponensre bontásnál csak 1 card-ot használunk, és 3-szor van meghívva az <app-eventcard> a html-ben.. 
-hogyan lehet mind a 3 különböző kártyát berakni? 
+<!-- komponensre bontásnál csak 1 card-ot használunk, és 3-szor van meghívva az <app-eventcard> a html-ben..
+hogyan lehet mind a 3 különböző kártyát berakni?
 
                 <div class="col col-md-6 col-lg-4">
                     <div class="index_card text-center">

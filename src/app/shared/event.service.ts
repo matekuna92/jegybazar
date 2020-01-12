@@ -36,44 +36,44 @@ export class EventService {
       },
       {
         'id': 4,
-        'name': 'Sziget Fesztivál',
-        'date': '2017-08-03',
-        'pictureURL': 'assets/sziget.png',
+        'name': 'Fezen',
+        'date': '2018-06-23',
+        'pictureURL': 'assets/fezen.jpg',
         'description': 'Event description text'
       },
       {
         'id': 5,
-        'name': 'Diótörő Balett',
-        'date': '2017-11-23',
-        'pictureURL': 'assets/diotoro.jpg',
+        'name': 'Rock Maraton',
+        'date': '2019-07-12',
+        'pictureURL': 'assets/rockmaraton.jpg',
         'description': 'Event description text'
       },
       {
         'id': 6,
-        'name': 'Macskák Musical',
+        'name': 'Black Hat USA',
         'date': '2017-02-11',
-        'pictureURL': 'assets/macskak.jpg',
+        'pictureURL': 'assets/blackhat.jpg',
         'description': 'Event description text'
       },
       {
         'id': 7,
-        'name': 'Sziget Fesztivál',
+        'name': 'tedX Talk',
         'date': '2017-08-03',
-        'pictureURL': 'assets/sziget.png',
+        'pictureURL': 'assets/tedx.jpg',
         'description': 'Event description text'
       },
       {
         'id': 8,
-        'name': 'Diótörő Balett',
-        'date': '2017-11-23',
-        'pictureURL': 'assets/diotoro.jpg',
+        'name': 'AMTS - Nemzetközi Autó és Tuning Show',
+        'date': '2019-03-20',
+        'pictureURL': 'assets/amts.jpg',
         'description': 'Event description text'
       },
       {
         'id': 9,
-        'name': 'Macskák Musical',
-        'date': '2017-02-11',
-        'pictureURL': 'assets/macskak.jpg',
+        'name': 'InFest Milano',
+        'date': '2017-06-20',
+        'pictureURL': 'assets/infest.jpg',
         'description': 'Event description text'
       }
     ]

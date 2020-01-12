@@ -15,7 +15,7 @@
             <label>Eseményt szeretnék létrehozni</label>
         </div>
         <div class="w-100"></div>
-        <div><a routerLink="../new" class="btn btn-primary" role="button">Új esemény létrehozása</a></div>
+        <div><a routerLink="./new" class="btn btn-primary" role="button">Új esemény létrehozása</a></div>
     </div>
 
 </div>
@@ -23,12 +23,12 @@
 <div class="card-deck">
 
     <!-- átalakítás az eventModel és a Service létrehozása után - példa ngFor-ra
-    event-list component-ben lévő events tömböt járja végig, mindegyik elemhez létrehoz egy div-et 
+    event-list component-ben lévő events tömböt járja végig, mindegyik elemhez létrehoz egy div-et
     <div *ngFor="let ev of events"> {{ev.name}} </div>
     -->
 
      <!-- [esemeny]-nek értéket kell adni, különben cant read id of undefined errort kapunk
-    eventcart component html-ben megadtuk, hogy esemeny.id legyen a paraméter, de itt még nem kapott értéket 
+    eventcart component html-ben megadtuk, hogy esemeny.id legyen a paraméter, de itt még nem kapott értéket
 
     3 tömböt hozunk létre a külső ngFor-ral, ezekben mindegyikben 3 esemény lesz, ezt a belső ngFor hozza létre
     külső ngFor a 3 div-et hozza létre, a 2. pedig az eventcard 3-3-3 elemeket -->

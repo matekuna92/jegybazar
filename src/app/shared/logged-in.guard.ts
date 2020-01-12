@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,8 @@ export class LoggedInGuard implements CanActivate {
 
   // elkérjük a dependency injector-tól a UserService-t (kézzel írt konstruktor, nem tartalmazta generálás után)
   constructor(private _userService: UserService,
-    private _router: Router) {
+              private _router: Router,
+              private _location: Location) {
   }
 
   // belépés után, ha a profil oldalán frissítem az oldalt cannot read name of undefined error,
@@ -33,7 +35,11 @@ export class LoggedInGuard implements CanActivate {
     // navigálunk a home-ra, ha ráfrissítek a profil oldalon, és nincs jogosultság megnézni az adatlapot
     else
     {
-      this._router.navigate(['/home']);
+     /// this._router.navigate(['/home']);
+
+      /// Location service használata itt is, úgy, mint a ticket list-nél
+      this._router.navigate([this._location.path()]);
+
     }
   }
 }
