@@ -1,0 +1,5 @@
+// az angular dirty-nek jelöli azt a mezőt ami nem pristine, tehát módosítottam a kezdeti értékét
+.ng-dirty:not(form)
+{
+  border-left: 5px solid #42A948; /* green */
+}

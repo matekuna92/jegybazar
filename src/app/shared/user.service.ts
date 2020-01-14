@@ -92,7 +92,8 @@ export class UserService {
 
    getUserById(id: number)
    {
-      const user = this._allUsers.filter(u => u.id === id);
+     // Number-ként adtam meg, de a formból stringként jöttek, ezért kasztolás + operátorral: üres oszlopok jelentek meg
+      const user = this._allUsers.filter(u => u.id === +id);
       return user.length > 0 ? user[0] : new UserModel(UserModel.emptyUser);
 
       // itt kezeljük le azt az esetet, ha nincs adat, ekkor az emptyUser objektumot használjuk a példányosításhoz

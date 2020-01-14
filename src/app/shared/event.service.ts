@@ -90,7 +90,8 @@ export class EventService {
 
   getEventById(id: number)
   {
-    const ev = this._events.filter(e => e.id === id);
+    // Number-ként adtam meg, de a formból stringként jöttek, ezért kasztolás + operátorral
+    const ev = this._events.filter(e => e.id === +id);
     // le kell kezelni azt az esetet, ha nem áll rendelkezésünkre adat
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }

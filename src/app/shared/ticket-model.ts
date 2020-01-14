@@ -22,7 +22,7 @@ export class TicketModel {
   // kezelni kell az üres jegyet is, úgy mint az eventModel esetén
   // ehhez a többit viszont opcionálissá kell tenni fent, hogy elég legyen csak a lenti értékeket megadni
   // eredetihez képest közben kikerült az artist, és a bidDate html-ből is, model-ben is ki kell venni, hogy jó legyen az EmptyTicket
-  static get EmptyTicket(): TicketModel
+  static get emptyTicket(): TicketModel
   {
     return {
       date: '',
