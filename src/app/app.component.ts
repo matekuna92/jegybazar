@@ -11,7 +11,7 @@ export class AppComponent {
 
   // miután rátettük a loggedInGuard-ot az event list és ticket route-okra, mindig külön be kellett
   // jelentkezni mielőtt megnézhettük volna.. ezt most ideiglenesen megkerülve automatikusan belépünk
-  /*constructor(private _userService: UserService)
+ /* constructor(private _userService: UserService)
   {
     this._userService.login('angular', 'angular');
   }

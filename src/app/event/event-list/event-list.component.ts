@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../shared/event.service';
 import { EventModel } from '../../shared/event-model';
+import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-event-list',
@@ -15,7 +16,8 @@ export class EventListComponent implements OnInit {
 
   // EventService-t elkéri a dependency injection-től az angular, az app.module-ban kötöttük be, és az 
   // event.model modellben megírt getAllEvents() metódust hívjuk meg, ami visszaadja az eseményeket
-  constructor(private _eventService: EventService)
+  constructor(private _eventService: EventService,
+              private _userService: UserService)      // html miatt kell importálni, gomb csak akkor jelenjen meg, ha isLoggedIn true az ngIf-nél
   {
   }
 

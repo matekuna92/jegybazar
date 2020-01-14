@@ -12,12 +12,12 @@
                           </form>
                       </div>
 
-                      <div class="my-2 my-lg-0 text-center">
+                      <div class="my-2 my-lg-0 text-center" *ngIf="_userService.isLoggedIn">
                           <div>
                               <label>Jegyet szeretnék létrehozni</label>
                           </div>
                           <div class="w-100"></div>
-                          <div><a routerLink="/ticket/new" class="btn btn-primary" role="button">Új jegy léterhozása</a></div>
+                          <div><a routerLink="/ticket/new" class="btn btn-primary" role="button">Új jegy létrehozása</a></div>
                       </div>
 
                   </div>

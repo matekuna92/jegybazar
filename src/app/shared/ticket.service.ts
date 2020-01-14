@@ -144,4 +144,21 @@ export class TicketService {
   {
     return this._eventService.getEventById(id).name;
   }
+
+  // a már meglévő eventek mellé létrehozunk egy újat, legnagyobb id + 1 id-val
+  create(param: TicketModel)
+  {
+    this._tickets = [
+      ...this._tickets,
+      {
+        id: this._getMaxId() + 1,
+        ...param
+      }
+    ];
+  }
+
+  private _getMaxId()
+  {
+    return this._tickets.reduce( (x,y) => x.id > y.id ? x : y).id + 1;
+  }
 }
