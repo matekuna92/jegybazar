@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     // ha children-t hozunk létre, nem szükséges a /event előtag(event/list), automatikusan elékerül
     children: [
         {path: '', component: EventListComponent},
-        {path: ':id', component: EventDetailComponent, canActivate: [LoggedInGuard]},
+        {path: ':id', component: EventDetailComponent}, //canActivate: [LoggedInGuard]}, // show nézet miatt leszedve, ha nincs belogolva user
         {path: 'new', component: EventDetailComponent, canActivate: [LoggedInGuard]}  // new és editre is a detail komponenst használjuk
     ]},
     {path: 'ticket',
@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     children: [     /* ez a 3 children váltakozik a ticket component router-outlet részében */
         {path: '', component: TicketListComponent},
         {path: 'new', component: TicketDetailComponent, canActivate: [LoggedInGuard]},
-        {path: ':id', component: BidComponent, canActivate: [LoggedInGuard]},
+        {path: ':id', component: BidComponent, canActivate: [LoggedInGuard]}, 
     ]},
     {path: 'about', component: AboutComponent},
     {path: 'user',

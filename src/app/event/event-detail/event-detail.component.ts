@@ -3,6 +3,7 @@ import { EventModel } from '../../shared/event-model';
 import { EventService } from '../../shared/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-event-detail',
@@ -12,11 +13,13 @@ import { Location } from '@angular/common';
 export class EventDetailComponent implements OnInit {
   // itt is osztályváltozóban tároljuk az aktuális event-et, mint a többi fájl esetén
   event: EventModel;
+  editForm = false;   // html-ben true/false alapján disabled minden input, és ez alapján jelennek meg a gombok
 
   constructor(private _route: ActivatedRoute,
               private _eventService: EventService,
               private _location: Location,
-              private _router: Router) { }
+              private _router: Router,
+              public _userService: UserService) { }
 
   ngOnInit() {
     // snapshot.params.id módon is használható, de ekkor eltörhet a kód, ha nincs id -- params?.id -val javítható
@@ -38,11 +41,12 @@ export class EventDetailComponent implements OnInit {
     else
     {
       this.event = new EventModel(EventModel.emptyEvent);
+      this.editForm = true;
       console.log('Nem kaptunk eventet, jöhet az emptyEvent');
     }
   }
 
-  onSubmit(form)
+  onSubmit()
   {
     // elkülönítjük a létező event szerkesztését, és az új event létrehozását
     // ha kaptunk id-t a router paraméterből(van id), akkor egy eseményt szerkesztünk /1/edit URL-en
@@ -68,7 +72,11 @@ export class EventDetailComponent implements OnInit {
     /// this._router.navigate(['/event/list']);
     this._location.back();
 
-    console.log('form:', form);
     console.log('event:', this.event);
+  }
+
+  navigateBack() 
+  {
+    this._location.back();
   }
 }

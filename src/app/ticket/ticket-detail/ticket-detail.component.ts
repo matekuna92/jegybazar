@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 import { EventModel } from '../../shared/event-model';
-import { TicketService } from 'src/app/shared/ticket.service';
-import { EventService } from 'src/app/shared/event.service';
-import { UserService } from 'src/app/shared/user.service';
+import { TicketService } from '../../shared/ticket.service';
+import { EventService } from '../../shared/event.service';
+import { UserService } from '../../shared/user.service';
 import { Router } from '@angular/router';
 
 @Component({
