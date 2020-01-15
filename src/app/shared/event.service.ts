@@ -91,12 +91,12 @@ export class EventService {
   getEventById(id: number)
   {
     // Number-ként adtam meg, de a formból stringként jöttek, ezért kasztolás + operátorral
-    // ott derült ki, amikor új ticket-et hoztam létre a form alapján, ekkor a create metódusban nem 
+    // ott derült ki, amikor új ticket-et hoztam létre a form alapján, ekkor a create metódusban nem
     // jó az id, mert stringként kapta meg, így üres esemény névvel hozza létre a ticket-et
-// debuggolás: Augury - hozzáadás utána a ticketDetailComponent-ben látszódik a tömb utolsó ticket eleménél, hogy 
+// debuggolás: Augury - hozzáadás utána a ticketDetailComponent-ben látszódik a tömb utolsó ticket eleménél, hogy
 // az event objektum üres és nincs id-ja...
 
-    const ev = this._events.filter(e => e.id === id);
+    const ev = this._events.filter(e => e.id === +id);
     // le kell kezelni azt az esetet, ha nem áll rendelkezésünkre adat
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
