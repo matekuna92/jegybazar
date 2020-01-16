@@ -11,7 +11,8 @@ export class UserService {
   private _user: UserModel;
   private _allUsers: UserModel[];
 
-  constructor(private _router: Router) {
+  constructor(private _router: Router,
+              private _userService: UserService) {    // profile-edit miatt szükséges a UserService is! (updateUser)
     // mock adat a getUserById és a Ticket service-hez
     this._allUsers = [
     new UserModel({
@@ -20,7 +21,8 @@ export class UserService {
       'email': 'pistaba@pistaba.com',
       'address': 'pistaba lak 12',
       'dateOfBirth': '1900-01-01',
-      'gender': 'male'
+      'gender': 'male',
+      'profilePictureUrl': 'http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg'
     }),
     new UserModel({
       'id': 2,
@@ -28,7 +30,8 @@ export class UserService {
       'email': 'marcsa@marcsa.hu',
       'address': 'marcsa var 42.',
       'dateOfBirth': '2000-01-01',
-      'gender': 'female'
+      'gender': 'female',
+      'profilePictureUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ'
     }),
     new UserModel({
       'id': 3,
@@ -36,7 +39,8 @@ export class UserService {
       'email': 'mzx@mzx.hu',
       'address': 'namek',
       'dateOfBirth': '2199-02-01',
-      'gender': 'satan fattya'
+      'gender': 'male',
+      'profilePictureUrl': 'https://www.pngitem.com/pimgs/m/41-415019_profile-man-male-free-picture-male-avatar-clipart.png'
     }),
   ]
   }
@@ -63,6 +67,11 @@ export class UserService {
       this.isLoggedIn = false;
       this._router.navigate(['/home']);
       console.log('Bejelentkezve:', this.isLoggedIn);
+  }
+
+  updateUser(param: UserModel)
+  {
+   // this._user = new UserModel(param);
   }
 
    // opcionális paraméter -> a komponensből kap egy usermodel-t, egyébként nincs paraméter

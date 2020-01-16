@@ -5,6 +5,7 @@ export class UserModel {
     address: string;
     dateOfBirth: string;
     gender: string;
+    profilePictureUrl: string;
 
     constructor(param?: UserModel)
     {
@@ -24,7 +25,8 @@ export class UserModel {
             email: 'test@email.com',
             address: 'Random Street 12',
             dateOfBirth: '1990.01.01',
-            gender: 'Male'
+            gender: 'Male',
+            profilePictureUrl: 'https://www.netclipart.com/pp/m/232-2329525_person-svg-shadow-default-profile-picture-png.png'
         }
     }
 
@@ -41,7 +43,8 @@ export class UserModel {
         email: '',
         address: '',
         dateOfBirth: '',
-        gender: ''
+        gender: '',
+        profilePictureUrl: ''
       }
     }
 }

@@ -11,7 +11,8 @@
             </div>
 
             <div class="row justify-content-center bg-light m-0">
-                <img class="profil my-3 border" src="assets/profil.png" alt="Card image cap"></div>
+                <!-- miután kiegészítettük a user modelt profilPicUrl-lel, mostmár onnan vehető az aktuális user profilképe -->
+                <img class="profil my-3 border" [src]="user.profilePictureUrl" alt="Card image cap"></div>
             <div class="card-body">
                 <table class="table table-responsive">
 
@@ -26,7 +27,7 @@
                             <td> {{ user.email }} </td>
                         </tr>
                         <tr>
-                            <th scope="row">Település:</th>
+                            <th scope="row">Lakcím:</th>
                             <td> {{ user.address }} </td>
                         </tr>
                         <tr>
