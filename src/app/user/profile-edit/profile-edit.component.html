@@ -6,7 +6,10 @@
 
         <div class="card-header">
             <div class="bg-light text-center">
-                <h3>Profil módosítása</h3>
+              <!-- ugyanazt a html-t használja a reg és a módosítás, user id-tól függően
+              változik a szöveg, reg esetén jelszó html is megjelenik -->
+                <h3 *ngIf="user.id">Profil módosítása</h3>
+                <h3 *ngIf="!user.id"> Regisztráció</h3>
             </div>
         </div>
 
@@ -14,7 +17,7 @@
 
             <!--card-body-->
 
-            <!-- átalakítás form-má, event-detail és ticket-detail-hez hasonlóan 
+            <!-- átalakítás form-má, event-detail és ticket-detail-hez hasonlóan
             <div class="form-group">
                 <label for="nev">Név</label>
                 <input type="text" class="form-control mb-3" id="nev" placeholder="név">
@@ -67,7 +70,7 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="lany">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="lany" value="option2"
-                            [(ngModel)]="user.gender" name="gender" 
+                            [(ngModel)]="user.gender" name="gender"
                             value="female">Lány
                         </label>
                     </div>
@@ -95,16 +98,60 @@
                     <alert type="danger" *ngIf="profilePictureUrl.touched && profilePictureUrl.invalid">Kötelező mező!</alert>
                 </div>
 
-        <div class="text-center mb-3">
+          <ng-container *ngIf="!user.id">
+
+            <div class="form-group">
+              <label for="registerPassword">Jelszó</label>
+              <input type="password" id="registerPassword"
+                     class="form-control"
+                     title="kis, nagybetű és szám, legalább nyolc karakter hosszan"
+                     placeholder="jelszó"
+                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                     required
+                     ngModel name="pass1"
+                     #pass1="ngModel"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="registerPassword2">Jelszó még egyszer</label>
+              <input type="password" id="registerPassword2"
+                     class="form-control"
+                     title="kis, nagybetű és szám, legalább nyolc karakter hosszan"
+                     placeholder="jelszó ismet"
+                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                     required
+                     ngModel name="pass2"
+                     #pass2="ngModel"
+              >
+            </div>
+
+            <alert type="danger"
+                   *ngIf="pass1.dirty && pass2.dirty && (pass1.invalid || pass2.invalid || (pass1.value !== pass2.value))">
+              A jelszavak nem megfelelőek!
+            </alert>
+
+            <div class="text-center mb-3">
+              <button type="submit" class="btn btn-primary btn-lg"
+                      [disabled]="profileForm.invalid || (pass1.value !== pass2.value)"
+              > Regisztráció
+              </button>
+            </div>
+
+          </ng-container>
+
+          <div *ngIf="user.id" class="text-center mb-3">
+
             <button type="submit" class="btn btn-primary btn-lg"
             [disabled]="profileForm.invalid"
-            >Mentés</button>  <!-- ../ -> visszalépés egyel, a profile html-re --> 
-        </div>
+            >Mentés</button>  <!-- ../ -> visszalépés egyel, a profile html-re -->
+
+        </div>  <!-- text-center mb-3 -->
 
     </form>
 
-    </div>
+    </div> <!-- card-body -->
 
-</div>
+  </div>  <!-- col-sm -->
 
-</div>
+</div>  <!-- container -->

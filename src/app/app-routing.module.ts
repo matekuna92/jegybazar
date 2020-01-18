@@ -11,7 +11,6 @@ import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.comp
 import { BidComponent } from './ticket/bid/bid.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './user/login/login.component';
-import { RegisterComponent } from './user/register/register.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import {ProfileComponent} from './user/profile/profile.component';
 import {ProfileEditComponent} from './user/profile-edit/profile-edit.component';
@@ -46,9 +45,10 @@ const appRoutes: Routes = [
     {path: 'user',
     children: [
         {path: '', component: ProfileComponent, canActivate: [LoggedInGuard]},
+        // szerkeszteni csak bejelentkezve lehet a profilt, ugyanezt a komponenst használja a register route is
         {path: 'edit', component: ProfileEditComponent, canActivate: [LoggedInGuard]},
         {path: 'login', component: LoginComponent},
-        {path: 'register', component: RegisterComponent},
+        {path: 'register', component: ProfileEditComponent},
     ]},
     // ha nincs semmi megadva, akkor a home route legyen az alapértelmezett
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -82,7 +82,6 @@ export class AppRoutingModule
         BidComponent,
         AboutComponent,
         LoginComponent,
-        RegisterComponent,
         ProfileComponent,
         ProfileEditComponent,
         PageNotFoundComponent

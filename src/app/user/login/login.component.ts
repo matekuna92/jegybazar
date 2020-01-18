@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ export class LoginComponent implements OnInit {
   // error message-t tároló változó
   public error: string;
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService,
+              private _router: Router) { }
 
   ngOnInit() {
   }
@@ -24,7 +26,11 @@ export class LoginComponent implements OnInit {
     // akkor megjelenítjük az error msg-t
     if(!this._userService.login(email, password))
     {
-      this.error = 'Rossz e-mail vagy jelszót adott meg.';
+      this.error = 'Rossz e-mailt vagy jelszót adott meg.';
+    }
+    else
+    {
+      this._router.navigate(['/user']);
     }
   }
 

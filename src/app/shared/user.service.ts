@@ -51,9 +51,12 @@ export class UserService {
     {
       // feltöltjük a _user-t a példa adatokkal, és az angular Router komponenst használva
       // átirányítjuk a /user oldalra a felhasználót
-      this._user = new UserModel(UserModel.exampleUser);
+
+      // this._user = new UserModel(UserModel.exampleUser);
+      this._user = this._allUsers[2];
       this.isLoggedIn = true;
-      this._router.navigate(['/user']);
+      /// this._router.navigate(['/user']);
+      return true;
     }
     console.log('Bejelentkezve:', this.isLoggedIn); // elírt név/jelszó esetén false érték íródik ki
     // ha nem sikerült a navigálás
@@ -80,8 +83,17 @@ export class UserService {
    {
       if(param)
       {
-        // ha kapunk paramétert, akkor feltöltjük a user-t
-        this._user = new UserModel(param);
+          // ha kapunk paramétert, akkor feltöltjük a user-t
+        /// eredeti kód  this._user = new UserModel(param);
+        this._user = new UserModel({
+          id: 4,
+          ...param
+        });
+
+        this._allUsers = [
+          ...this._allUsers,
+          this._user
+        ];
       }
       // egyébként teszt adat
       else
@@ -90,7 +102,8 @@ export class UserService {
       }
 
       this.isLoggedIn = true;
-      this._router.navigate(['/user']);
+   ///   this._router.navigate(['/user']);
+   // ne itt navigáljunk, hanem majd login-nál, ha jó adatokkal lép be a user
       console.log('Bejelentkezve:', this.isLoggedIn);
    }
 
