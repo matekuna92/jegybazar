@@ -11,8 +11,7 @@ export class UserService {
   private _user: UserModel;
   private _allUsers: UserModel[];
 
-  constructor(private _router: Router,
-              private _userService: UserService) {    // profile-edit miatt szükséges a UserService is! (updateUser)
+  constructor(private _router: Router) {    // profile-edit miatt szükséges a _user is! (updateUser)
     // mock adat a getUserById és a Ticket service-hez
     this._allUsers = [
     new UserModel({
@@ -71,7 +70,7 @@ export class UserService {
 
   updateUser(param: UserModel)
   {
-   // this._user = new UserModel(param);
+    this._user = new UserModel(param);
   }
 
    // opcionális paraméter -> a komponensből kap egy usermodel-t, egyébként nincs paraméter

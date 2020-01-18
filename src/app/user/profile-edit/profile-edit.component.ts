@@ -21,7 +21,7 @@ export class ProfileEditComponent implements OnInit {
 
   onSubmit()
   {
-    // frissítjük a a user-ben a módosított adatokat 
+    // frissítjük a a user-ben a módosított adatokat
     this._userService.updateUser(this.user);
     this._router.navigate(['/user']);
   }
