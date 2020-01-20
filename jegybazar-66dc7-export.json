@@ -1,0 +1,198 @@
+{
+  "alma" : "korte",
+  "events" : {
+    "-Lz3PfD_lwBVF8fh6ovH" : {
+      "date" : "2017-08-03",
+      "description" : "Event description text",
+      "id" : "-Lz3PfD_lwBVF8fh6ovH",
+      "name" : "Sziget Fesztivál",
+      "pictureURL" : "http://www.fortitudemagazine.co.uk/wp-content/uploads/2017/04/sziget_og_image.jpg"
+    },
+    "-Lz3RMUkTXMDvO5yhUp2" : {
+      "date" : "2017-11-23",
+      "description" : "Event description text",
+      "id" : "-Lz3RMUkTXMDvO5yhUp2",
+      "name" : "Diótörő Balett",
+      "pictureURL" : "http://www.e-jegyiroda.hu/img/diotoro-jegyek-budapest-szeged-kecskemet-balett-mese-babjatek.jpg"
+    },
+    "-Lz3RZgVeqPvr0821wIG" : {
+      "date" : "2017-02-11",
+      "description" : "Event description text",
+      "id" : "-Lz3RZgVeqPvr0821wIG",
+      "name" : "Macskák Musical",
+      "pictureURL" : "https://pb2.jegy.hu/imgs/system-4/program/000/016/918/macskak-original-54100.jpg"
+    },
+    "-Lz3Rq0tr6r2BSVm8Z2m" : {
+      "date" : "2018-06-23",
+      "description" : "Event description text",
+      "id" : "-Lz3Rq0tr6r2BSVm8Z2m",
+      "name" : "Fezen",
+      "pictureURL" : "http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg"
+    },
+    "-Lz3S3XZOruESO2ZkE6G" : {
+      "date" : "2019-07-12",
+      "description" : "Event description text",
+      "id" : "-Lz3S3XZOruESO2ZkE6G",
+      "name" : "Rock Maraton",
+      "pictureURL" : "http://www.rockmaraton.hu/media/images/rockmaraton-2018-jegyvasarlas.jpg"
+    },
+    "-Lz3SGEgPQBF8VPRAdlY" : {
+      "date" : "2017-02-11",
+      "description" : "Event description text",
+      "id" : "-Lz3SGEgPQBF8VPRAdlY",
+      "name" : "Black Hat USA",
+      "pictureURL" : "https://www.blackhat.com/images/page-graphics/metatag/event-logo-us17.png"
+    },
+    "-Lz3S_kgiIRIl1XT-EyK" : {
+      "date" : "2017-08-03",
+      "description" : "Event description text",
+      "id" : "-Lz3S_kgiIRIl1XT-EyK",
+      "name" : "tedX Talk",
+      "pictureURL" : "https://churchleaders-eszuskq0bptlfh8awbb.stackpathdns.com/wp-content/uploads/2019/04/4.16.HOME_.CC.TedTalksDo.jpg"
+    },
+    "-Lz3SvH6JiF9HhAaJTHW" : {
+      "date" : "2019-03-20",
+      "description" : "Event description text",
+      "id" : "-Lz3SvH6JiF9HhAaJTHW",
+      "name" : "AMTS - Nemzetközi Autó és Tuning Show",
+      "pictureURL" : "https://www.autonavigator.hu/wp-content/uploads/2019/01/229736_source-1200x675.jpg"
+    },
+    "-Lz3TFadAqyMc7rYEFAU" : {
+      "date" : "2017-06-20",
+      "description" : "Event description text",
+      "id" : "-Lz3TFadAqyMc7rYEFAU",
+      "name" : "InFest Milano",
+      "pictureURL" : "https://pbs.twimg.com/media/EN1aWmMW4AA1TLk.jpg"
+    }
+  },
+  "tickets" : {
+    "-Lz3UQh7eIXpcWmzcCpW" : {
+      "bidStep" : 500,
+      "date" : "2018.05.02.",
+      "eventId" : "-Lz3PfD_lwBVF8fh6ovH",
+      "id" : "-Lz3UQh7eIXpcWmzcCpW",
+      "minimalBidPrice" : 2000,
+      "numberOfTickets" : 5,
+      "sellerUserId" : "-Lz3QPNZNQ3WxyuF0vmD"
+    },
+    "-Lz3Uhc3k45jPSgoYTYJ" : {
+      "bidStep" : 500,
+      "date" : "2019.05.02.",
+      "eventId" : "-Lz3PfD_lwBVF8fh6ovH",
+      "id" : "-Lz3Uhc3k45jPSgoYTYJ",
+      "minimalBidPrice" : 2500,
+      "numberOfTickets" : 10,
+      "sellerUserId" : "-Lz3QhC6OlouBLZ7IL2A"
+    },
+    "-Lz3UytSvN62fgoGNLU6" : {
+      "bidStep" : 300,
+      "date" : "2016.12.10.",
+      "eventId" : "-Lz3PfD_lwBVF8fh6ovH",
+      "id" : "-Lz3UytSvN62fgoGNLU6",
+      "minimalBidPrice" : 2000,
+      "numberOfTickets" : 6,
+      "sellerUserId" : "-Lz3QhC6OlouBLZ7IL2A"
+    },
+    "-Lz3VqjmQB5P47pTgXV1" : {
+      "bidStep" : 500,
+      "date" : "2018.08.20.",
+      "eventId" : "-Lz3RMUkTXMDvO5yhUp2",
+      "id" : "-Lz3VqjmQB5P47pTgXV1",
+      "minimalBidPrice" : 3000,
+      "numberOfTickets" : 15,
+      "sellerUserId" : "-Lz3QwYYBFHRP9KTpSg2"
+    },
+    "-Lz3W0WdTu-93LfsKAgF" : {
+      "bidStep" : 200,
+      "date" : "2019.11.16.",
+      "eventId" : "-Lz3RZgVeqPvr0821wIG",
+      "id" : "-Lz3W0WdTu-93LfsKAgF",
+      "minimalBidPrice" : 3500,
+      "numberOfTickets" : 12,
+      "sellerUserId" : "-Lz3QPNZNQ3WxyuF0vmD"
+    },
+    "-Lz3WMh1XsFpKdaSM3uc" : {
+      "bidStep" : 500,
+      "date" : "2019.11.08.",
+      "eventId" : "-Lz3Rq0tr6r2BSVm8Z2m",
+      "id" : "-Lz3WMh1XsFpKdaSM3uc",
+      "minimalBidPrice" : 3500,
+      "numberOfTickets" : 25,
+      "sellerUserId" : "-Lz3Z6p3Xl_3YCQa80S8"
+    },
+    "-Lz3WRRrQxmVcLl3DD8D" : {
+      "bidStep" : 500,
+      "date" : "2019.08.23.",
+      "eventId" : "-Lz3S3XZOruESO2ZkE6G",
+      "id" : "-Lz3WRRrQxmVcLl3DD8D",
+      "minimalBidPrice" : 3000,
+      "numberOfTickets" : 3,
+      "sellerUserId" : "-Lz3QwYYBFHRP9KTpSg2"
+    },
+    "-Lz3WWfIZ5-MbkW0ccjN" : {
+      "bidStep" : 500,
+      "date" : "2019.05.02",
+      "eventId" : "Lz3SGEgPQBF8VPRAdlY",
+      "id" : "-Lz3WWfIZ5-MbkW0ccjN",
+      "minimalBidPrice" : 2000,
+      "numberOfTickets" : 5,
+      "sellerUserId" : "-Lz3QwYYBFHRP9KTpSg2"
+    },
+    "-Lz3WcOv6e0I3yvx-QyE" : {
+      "bidStep" : 500,
+      "date" : "2020.05.08.",
+      "eventId" : "-Lz3S_kgiIRIl1XT-EyK",
+      "id" : "-Lz3WcOv6e0I3yvx-QyE",
+      "minimalBidPrice" : 5000,
+      "numberOfTickets" : 30,
+      "sellerUserId" : "-Lz3YWdbUPdmiACMtaoH"
+    }
+  },
+  "users" : {
+    "-Lz3QPNZNQ3WxyuF0vmD" : {
+      "address" : "marcsa var 42.",
+      "dateOfBirth" : "2000-01-01",
+      "email" : "marcsa@marcsa.hu",
+      "gender" : "female",
+      "id" : "-Lz3QPNZNQ3WxyuF0vmD",
+      "name" : "Marcsa",
+      "profilePictureUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ"
+    },
+    "-Lz3QhC6OlouBLZ7IL2A" : {
+      "address" : "pistaba lak 12",
+      "dateOfBirth" : "1900-01-01",
+      "email" : "pistaba@pistaba.com",
+      "gender" : "male",
+      "id" : "-Lz3QhC6OlouBLZ7IL2A",
+      "name" : "Pista ba",
+      "profilePictureUrl" : "http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg"
+    },
+    "-Lz3QwYYBFHRP9KTpSg2" : {
+      "address" : "namek",
+      "dateOfBirth" : "1995-02-15",
+      "email" : "mzx@mzx.hu",
+      "gender" : "male",
+      "id" : "-Lz3QwYYBFHRP9KTpSg2",
+      "name" : "Mezei Szilveszter",
+      "profilePictureUrl" : "https://www.pngitem.com/pimgs/m/41-415019_profile-man-male-free-picture-male-avatar-clipart.png"
+    },
+    "-Lz3YWdbUPdmiACMtaoH" : {
+      "address" : "X Street 112.",
+      "dateOfBirth" : "1985-11-08",
+      "email" : "joe@satriani.com",
+      "gender" : "male",
+      "id" : "-Lz3YWdbUPdmiACMtaoH",
+      "name" : "Joe Satriani",
+      "profilePictureUrl" : "https://upload.wikimedia.org/wikipedia/commons/b/bc/Joe_Satriani_2005.jpg"
+    },
+    "-Lz3Z6p3Xl_3YCQa80S8" : {
+      "address" : "",
+      "dateOfBirth" : "1989-12-12",
+      "email" : "reykylo@sw.com",
+      "gender" : "female",
+      "id" : "-Lz3Z6p3Xl_3YCQa80S8",
+      "name" : "Rey Kylo",
+      "profilePictureUrl" : "https://img1.looper.com/img/gallery/its-time-to-talk-about-that-rey-and-kylo-ren-scene-in-the-rise-of-skywalker/intro-1577198045.jpg"
+    }
+  }
+}
